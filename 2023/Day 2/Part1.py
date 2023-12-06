@@ -15,6 +15,6 @@ for line in lines:
                 valid = False
     if valid:
         ans += int(id.split()[-1]) 
-        print(id)
+        
 print(ans)
 
