@@ -1,4 +1,4 @@
-with open("Input.txt", "r") as file:
+with open("Day 1/Input.txt", "r") as file:
     lines = file.read().split("\n")
 
 ans = 0
