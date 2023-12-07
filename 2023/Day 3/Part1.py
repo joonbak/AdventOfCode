@@ -21,7 +21,7 @@ for i in range(n_rows):
                         if curr != "." and not curr.isdigit():
                             valid = True
 
-        elif num != 0:
+        elif num > 0:
             if valid:
                 ans += num
             num = 0
