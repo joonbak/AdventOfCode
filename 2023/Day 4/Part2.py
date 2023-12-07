@@ -7,6 +7,7 @@ score = 0
 hash_map = defaultdict(int)
 
 for id, line in enumerate(lines):
+    hash_map[id] += 1
     id += 1
     lst = []
     for num in line.split(":"):
@@ -14,7 +15,6 @@ for id, line in enumerate(lines):
             card = list(game.split())
             lst.append(card)
             
-
     tracker = 0
     for i in range(len(lst[2])):
         if lst[2][i] in lst[1]:
@@ -23,9 +23,7 @@ for id, line in enumerate(lines):
         copies = 1
         if id in hash_map:
             copies = hash_map[id] + 1
-            hash_map[id] += 1
-        else:
-            hash_map[id] += 1
+            
         for rounds in range(copies):
             for j in range(1, tracker+1):
                 hash_map[id + j] += 1
