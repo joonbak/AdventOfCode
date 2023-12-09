@@ -1,7 +1,6 @@
 with open("Day 6/Input.txt", "r") as file:
     lines = file.read().split("\n")
 
-line = lines
 lst = []
 for line in lines:
     lst.append(line.split(":")[1].split())
