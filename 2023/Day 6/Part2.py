@@ -1,17 +1,23 @@
 with open("Day 6/Input.txt", "r") as file:
-    lines = file.read().split("\n")
+    time, distance = file.read().split("\n")
 
-lst = []
-for line in lines:
-    id, rest = line.split(":")
-    num = rest.replace(" ", "")
-    lst.append(num)
 
-wins = 0
-for j in range(int(lst[0])):
-    race = int(lst[0]) - j
-    if race * j > int(lst[1]):
-        wins += 1
+time =  list(map(int, ["".join(time.split(":")[1].split())]))
+distance =  list(map(int, ["".join(distance.split(":")[1].split())]))
 
-print(wins)
+total = []
+for i in range(len(time)):
+    t = time[i]
+    d = distance[i]
 
+    wins = 0
+    for j in range(t):
+        my_dist = j * (t - j)
+        if my_dist > d:
+            wins += 1
+    total.append(wins)
+
+nums = 1
+for x in total:
+    nums *= x
+print(nums)
